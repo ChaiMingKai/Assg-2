@@ -1,33 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Genshin</title>
+  <title>Genshin Character</title>
 
+  <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" type="text/css" href="header.css">
-  <link rel="stylesheet" type="text/css" href="home.css">
 </head>
 <body>
   <header>
-    <h1>Welcome to Genshin Fandom!</h1> <!-- Welcome message -->
-    <p>Where you can get more familiar with Genshin character</p> <!-- About section -->
     <div class="menu-icon" onclick="toggleMenu()">
       <div class="bar"></div>
       <div class="bar"></div>
       <div class="bar"></div>
     </div>
     <div class="dropdown-content">
-      <a href="quiz.html">Quiz</a>
+    <a href="quiz.html">Quiz</a>
       <a href="wiki.html">Wiki</a>
     </div>
-
+    
+    <h1>Genshin Impact Characters</h1>
+    <input type="text" id="searchInput" placeholder="Search character">
   </header>
+  <div id="dataContainer"></div>
+  <div id="characterContainer"></div>
   <div class="loader-wrapper">
     <span class="loader"><span class="loader-inner"></span></span>
   </div>
   <audio id="homemusic" loop>
-        <source src="bgmusic/homepage.mp3" type="audio/mpeg" muted>
+        <source src="bgmusic/wiki.mp3" type="audio/mpeg" muted>
       </audio>
 
+
+  <script src="script.js"></script>
   <script src="home.js"></script>
 </body>
 </html>

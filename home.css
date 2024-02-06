@@ -1,0 +1,9 @@
+/* styles.css */
+
+body {
+    background-image: url('cardimg/homepagebg.png');
+    /* You need to replace 'path/to/your/image/' with the actual path 
+       to your image file. Make sure the file path is correct. */
+    background-size: cover; /* Optional: Adjust the background size */
+    background-repeat: no-repeat; /* Optional: Prevent background image from repeating */
+}

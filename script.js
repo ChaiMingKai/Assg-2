@@ -1,3 +1,5 @@
+// script.js
+
 const dataContainer = document.getElementById('dataContainer');
 const searchInput = document.getElementById('searchInput');
 
@@ -27,10 +29,28 @@ function renderCharacters(characters) {
 
   characters.forEach(character => {
     const characterDiv = document.createElement('div');
-    characterDiv.classList.add('character');
+    characterDiv.classList.add('character', character.vision.toLowerCase());
 
+    // Add an event listener to the character div
+    characterDiv.addEventListener('click', () => {
+      // Clear the container
+      dataContainer.innerHTML = '';
+
+      // Create and append new elements for each character detail
+      const details = ['name', 'title', 'vision', 'weapon', 'gender', 'nation', 'affiliation', 'rarity', 'release', 'constellation', 'birthday', 'description'];
+      details.forEach(detail => {
+        const detailElement = document.createElement('p');
+        detailElement.textContent = `${detail.charAt(0).toUpperCase() + detail.slice(1)}: ${character[detail]}`;
+        dataContainer.appendChild(detailElement);
+      });
+    });
+
+    // Rest of your code...
     const characterName = document.createElement('h2');
     characterName.textContent = character.name;
+
+    const charactervision = document.createElement('h3')
+    charactervision.textContent=character.vision
 
     const characterImage = document.createElement('img');
     let characterImageUrl;
@@ -38,7 +58,8 @@ function renderCharacters(characters) {
     const exception1 = ['kamisato ayaka', 'kamisato ayato','kaedehara kazuha','sangonomiya kokomi','kujou sara'];
     const exception2 = ['raiden shogun']
     const exception3 = {
-      'chevreuse': { imageUrl: 'cardimg/Chevreuse.png' }
+      'chevreuse': { imageUrl: 'cardimg/Chevreuse.png' },
+      'navia':  {imageUrl: 'cardimg/Navia.png'},
     };
     
     if (exception1.some(name => character.name.toLowerCase().includes(name))) {
@@ -54,13 +75,12 @@ function renderCharacters(characters) {
       // Handle the third condition with specific images and titles from the object
       characterImageUrl = exception3[character.name.toLowerCase()].imageUrl;
       characterImage.setAttribute('title', exception3[character.name.toLowerCase()].title);
-    // } else if (exception3.includes(character.name.toLowerCase())) {
-    //   // Handle the third condition with specific images for each name
-    //   switch (character.name.toLowerCase()) {
-    //     case 'chevreuse':
-    //       characterImageUrl = 'cardimg/Chevreuse.png';
-    //       break;
-    //   }
+    } else if (character.name.toLowerCase() === 'traveler') {
+    // Extract the vision from the character object
+    const characterVision = character.vision.toLowerCase();
+    // Construct the URL using both the name and vision
+    characterImageUrl = `https://genshin.jmp.blue/characters/traveler-${characterVision}/card`;
+   
     } else {
       characterImageUrl = `https://genshin.jmp.blue/characters/${character.name.toLowerCase().replace(/\s/g, '-')}/card`;
     }
@@ -88,7 +108,7 @@ function renderCharacters(characters) {
     characterDiv.appendChild(characterName);
     characterDiv.appendChild(characterImage);
     characterDiv.appendChild(characterDescription);
-
+    characterDiv.appendChild(charactervision);
     dataContainer.appendChild(characterDiv);
   });
 }
