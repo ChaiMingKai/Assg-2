@@ -1,4 +1,3 @@
-// script.js
 
 const dataContainer = document.getElementById('dataContainer');
 const searchInput = document.getElementById('searchInput');
@@ -58,8 +57,8 @@ function renderCharacters(characters) {
     const exception1 = ['kamisato ayaka', 'kamisato ayato','kaedehara kazuha','sangonomiya kokomi','kujou sara'];
     const exception2 = ['raiden shogun']
     const exception3 = {
-      'chevreuse': { imageUrl: 'cardimg/Chevreuse.png' },
-      'navia':  {imageUrl: 'cardimg/Navia.png'},
+      'chevreuse': { imageUrl: '../cardimg/Chevreuse.png' },
+      'navia':  {imageUrl: '../cardimg/Navia.png'},
     };
     
     if (exception1.some(name => character.name.toLowerCase().includes(name))) {
@@ -90,9 +89,8 @@ function renderCharacters(characters) {
         if (response.ok) {
           characterImage.src = characterImageUrl;
         } else {
-          characterImage.src = 'not-available.jpg'; // Set a default image
-          // Or display a message
-          // characterImage.alt = 'Image not available';
+
+    characterImage.alt = 'Image not available';
         }
       })
       .catch(error => {

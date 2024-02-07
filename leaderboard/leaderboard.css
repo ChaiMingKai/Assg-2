@@ -1,0 +1,39 @@
+body {
+    background-image: url('../bgimg/leaderboardbg.jpeg');
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #c8a7a7;
+    margin-top: 20px;
+}
+
+#leaderboard-table {
+    width: 60%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #2fa7d2;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #187e74;
+}
+
+th {
+    background-color: #d7862a;
+    color: #333;
+}
+
+tr:nth-child(even) {
+    background-color: #d213c5;
+}
+
+tr:hover {
+    background-color: #f2f2f2;
+}

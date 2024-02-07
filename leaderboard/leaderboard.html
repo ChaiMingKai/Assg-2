@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Leaderboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,700;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../header.css">
+    <link rel="stylesheet" type="text/css" href="../leaderboard/leaderboard.css">
+</head>
+<body>
+
+    <header>
+        <h1>Quiz Leaderboard</h1>
+        <div class="menu-icon" onclick="toggleMenu()">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+        <div class="dropdown-content">
+          <a href="../quiz/quiz.html">Quiz</a>
+          <a href="../leaderboard/leaderboard.html">Leaderboard</a>
+          <a href="../wiki/wiki.html">Wiki</a>
+        </div>
+    
+      </header>
+
+    <table id="leaderboard-table">
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Name</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody id="leaderboard-body">
+        </tbody>
+    </table>
+    <script src="../index/home.js"></script>
+    <script src="../leaderboard/leaderboard.js"></script>
+</body>
+</html>

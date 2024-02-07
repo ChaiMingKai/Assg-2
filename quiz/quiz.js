@@ -4,9 +4,10 @@ const choicesElement = document.getElementById('choices');
 const scoreElement = document.getElementById('score-value');
 const lottiePlayer = document.getElementById('lottie-player');
 const lottieUrl = 'https://lottie.host/1c4d4a55-dcd0-438b-a351-2681203713ae/npgxKqLZn0.json';
-
+let questionsAsked = 0;
 let characters = [];
-
+const maxQuestions = 10;
+let leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || [];
 // Fetch data from API
 fetch(apiUrl)
     .then(response => response.json())
@@ -25,10 +26,16 @@ function initializeQuiz() {
 }
 
 function displayQuestion() {
+    if (questionsAsked >= maxQuestions) {
+        // End the quiz if the maximum number of questions has been reached
+        endQuiz();
+        return;
+    }
 
     if (window.questionTimeout) {
         clearTimeout(window.questionTimeout);
     }
+
     // Set a timeout for the duration of the Lottie animation
     window.questionTimeout = setTimeout(() => {
         // Check if an answer has been selected
@@ -76,7 +83,8 @@ function displayQuestion() {
         li.addEventListener('click', () => checkAnswer(choice, questionType === 'vision' ? character.vision : character.weapon));
         choicesElement.appendChild(li);
     });
-  
+
+    questionsAsked++; // Increment the number of questions asked
 }
 function checkAnswer(selected, correct) {
     const choices = document.querySelectorAll('.choice');
@@ -125,6 +133,29 @@ function getRandomIncorrectWeapons(correctWeapon) {
     const allWeapons = ['Sword', 'Claymore', 'Polearm', 'Bow', 'Catalyst'];
     const incorrectWeapons = allWeapons.filter(weapon => weapon !== correctWeapon);
     return shuffle(incorrectWeapons).slice(0, 3);
+}
+
+function endQuiz() {
+    // Prompt for player name
+    let playerName = prompt('Congratulations! You have completed the quiz. Please enter your name for the leaderboard:');
+    
+    while (playerName && leaderboard.some(entry => entry.name === playerName)) {
+        alert('A player with this name already exists in the leaderboard. Please enter a different name.');
+        playerName = prompt('Please enter your name again:');
+    }
+
+    if (playerName) {
+        // Add player's score to the leaderboard
+        leaderboard.push({ name: playerName, score: parseInt(scoreElement.textContent) });
+
+        // Store leaderboard in local storage
+        localStorage.setItem('leaderboard', JSON.stringify(leaderboard));
+
+        // Redirect to leaderboard page
+        window.location.href = 'leaderboard.html';
+    } else {
+        alert('Thank you for playing the quiz!');
+    }
 }
 
 

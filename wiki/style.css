@@ -1,6 +1,6 @@
 /* style.css */
 body, html {
-    background-image: url('bgimg/background.jpg');
+    background-image: url('../bgimg/background.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -129,3 +129,4 @@ body, html {
 #dataContainer p:last-child {
     margin-bottom: 0;
 }
+

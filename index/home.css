@@ -1,7 +1,7 @@
 /* styles.css */
 
 body {
-    background-image: url('bgimg/homepagebg.png');
+    background-image: url('../bgimg/homepagebg.png');
 
     background-size: cover; /* Optional: Adjust the background size */
 
