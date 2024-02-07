@@ -8,3 +8,5 @@ background.jpg:https://i.pinimg.com/originals/71/de/86/71de863e48b9f3c25419ae7f3
 homepagebackground.png: https://i.redd.it/66ic9c791ih61.png
 
 template color references: https://en.moegirl.org.cn/Template:Genshincolor
+
+quiz background: https://i.pinimg.com/originals/c4/19/7d/c4197d1cf950efbd2f69b477aa5354d0.jpg
