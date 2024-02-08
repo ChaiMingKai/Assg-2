@@ -13,15 +13,12 @@ fetch(apiUrl)
     .then(response => response.json())
     .then(data => {
         characters = data;
-
-        // Initialize quiz
         initializeQuiz();
     })
     .catch(error => console.error('Error fetching characters:', error));
 
 function initializeQuiz() {
     // Display a random question
-
     displayQuestion();
 }
 
@@ -41,11 +38,11 @@ function displayQuestion() {
         // Check if an answer has been selected
         const selected = Array.from(document.querySelectorAll('.choice')).find(choice => choice.style.backgroundColor === 'salmon' || choice.style.backgroundColor === 'lightgreen');
 
-        // If no answer has been selected, mark as incorrect and move to the next question
+        // If no answer has been selected, mark as incorrect and move on to the next question
         if (!selected) {
             checkAnswer('', questionType === 'vision' ? character.vision : character.weapon);
         }
-    }, 9000); // 10 seconds
+    }, 9000);
     
     // Choose a random question type: vision or weapon
     const questionType = Math.random() < 0.5 ? 'vision' : 'weapon';
@@ -84,7 +81,7 @@ function displayQuestion() {
         choicesElement.appendChild(li);
     });
 
-    questionsAsked++; // Increment the number of questions asked
+    questionsAsked++; //mark the number of questions answered
 }
 function checkAnswer(selected, correct) {
     const choices = document.querySelectorAll('.choice');
@@ -99,8 +96,7 @@ function checkAnswer(selected, correct) {
 
 
     });
-
-    // Wait for a while before going to the next question
+//slight delay to show the correct answer before moving to next question
     setTimeout(() => {
         if (selected === correct) {
             // Increase score by 1
@@ -109,7 +105,7 @@ function checkAnswer(selected, correct) {
         }
 
         displayQuestion();
-    },1000);
+    },500);
 }
 
 // shuffle an array
@@ -152,7 +148,7 @@ function endQuiz() {
         localStorage.setItem('leaderboard', JSON.stringify(leaderboard));
 
         // Redirect to leaderboard page
-        window.location.href = 'leaderboard.html';
+        window.location.href = '../leaderboard/leaderboard.html';
     } else {
         alert('Thank you for playing the quiz!');
     }

@@ -1,15 +1,13 @@
-# Wild West Bite - Restaurant Menu Website
-
-Wild West Bite is a web application that presents the menu of a restaurant in a user-friendly manner. The project aims to provide customers with an easy-to-navigate interface to explore menu items, add them to their cart, and submit orders with optional remarks.
+# Genshin Impact - Website for WIKI and QUIZ
+This website allows user to get familiar with Genshin Character, and have a fun quiz to test their understanding, which allows them to challenge their freind on the Leaderboard.
 
 ## Design Process
 
 ### Target Audience
-The website is designed for restaurant customers who want to view the menu, add items to their cart, and place orders online. The goal is to enhance the user experience by providing a visually appealing and intuitive interface.
-
+The website is designed for New Genshin Player who is not familiar with the gameplay and information, they can understand more about all characters from here.
 ### User Stories
 
-- As a user, I want to browse the restaurant menu to see the available dishes and their details.
+- As a user, I want to 
 - As a user, I want to add items to my cart and view the total before placing an order.
 - As a user, I want the option to include remarks or special instructions when adding items to the cart.
 - As a user, I want a responsive website that works well on different devices.

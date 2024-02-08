@@ -4,23 +4,25 @@ document.addEventListener('DOMContentLoaded', function () {
     if (leaderboardData) {
         leaderboardData = JSON.parse(leaderboardData);
 
-        // Sort leaderboard by score (descending order)
+        // Sort leaderboard by score , high to low
         leaderboardData.sort((a, b) => b.score - a.score);
 
         // Display leaderboard
         displayLeaderboard(leaderboardData);
     } else {
-        // If no leaderboard data found, display message
         document.getElementById('leaderboard-body').innerHTML = '<tr><td colspan="3">No leaderboard data available.</td></tr>';
     }
 });
 
 function displayLeaderboard(leaderboardData) {
     const leaderboardBody = document.getElementById('leaderboard-body');
-    leaderboardBody.innerHTML = ''; // Clear previous data
+    leaderboardBody.innerHTML = ''; 
 
-    // Populate the leaderboard table with data
-    leaderboardData.forEach((entry, index) => {
+//only 5 player will be shown
+    const top5 = leaderboardData.slice(0, 5);
+
+
+    top5.forEach((entry, index) => {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>${index + 1}</td>
@@ -30,3 +32,4 @@ function displayLeaderboard(leaderboardData) {
         leaderboardBody.appendChild(row);
     });
 }
+

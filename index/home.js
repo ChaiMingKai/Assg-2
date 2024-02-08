@@ -15,7 +15,7 @@ function toggleMenu() {
       loaderWrapper.style.display = "none";
     }, 1000);
   });
-  //use microsoft edge, turn on media autoplay on settings
+  //require user to turn on media autoplay on settings
   window.addEventListener('load', () => {
     homemusic.muted = false;
     homemusic.play();

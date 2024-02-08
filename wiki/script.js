@@ -30,9 +30,8 @@ function renderCharacters(characters) {
     const characterDiv = document.createElement('div');
     characterDiv.classList.add('character', character.vision.toLowerCase());
 
-    // Add an event listener to the character div
+    // event listener to the character div
     characterDiv.addEventListener('click', () => {
-      // Clear the container
       dataContainer.innerHTML = '';
 
       // Create and append new elements for each character detail
@@ -43,8 +42,6 @@ function renderCharacters(characters) {
         dataContainer.appendChild(detailElement);
       });
     });
-
-    // Rest of your code...
     const characterName = document.createElement('h2');
     characterName.textContent = character.name;
 
@@ -53,7 +50,7 @@ function renderCharacters(characters) {
 
     const characterImage = document.createElement('img');
     let characterImageUrl;
-    
+    //exception for api unmatched img
     const exception1 = ['kamisato ayaka', 'kamisato ayato','kaedehara kazuha','sangonomiya kokomi','kujou sara'];
     const exception2 = ['raiden shogun']
     const exception3 = {
@@ -71,7 +68,7 @@ function renderCharacters(characters) {
       characterImageUrl = `https://genshin.jmp.blue/characters/${characterFirstName}/card`;
 
     } else if (exception3[character.name.toLowerCase()]) {
-      // Handle the third condition with specific images and titles from the object
+  
       characterImageUrl = exception3[character.name.toLowerCase()].imageUrl;
       characterImage.setAttribute('title', exception3[character.name.toLowerCase()].title);
     } else if (character.name.toLowerCase() === 'traveler') {
@@ -89,13 +86,11 @@ function renderCharacters(characters) {
         if (response.ok) {
           characterImage.src = characterImageUrl;
         } else {
-
     characterImage.alt = 'Image not available';
         }
       })
       .catch(error => {
         console.error(error);
-        // Handle the error
       });
     
     characterImage.src = characterImageUrl;

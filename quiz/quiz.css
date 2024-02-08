@@ -11,17 +11,16 @@ body {
     display: flex;
     flex-direction: column;
     position: relative;
-    width: 800px; /* Adjust the width as needed */
-    height: auto; /* Allow height to adjust based on content */
+    width: 800px;
+    height: auto;
     margin: 20px auto;
-    background-color: #e0e0e0; /* New background color */
+    background-color: #e0e0e0;
     border: 2px solid #6abdde;
-    border-radius: 20px; /* Increased border radius for rounded corners */
-    padding: 40px; /* Increased padding for content */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Adjusted box shadow */
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
 }
-
 
 #quiz:hover {
     transform: scale(1.02);
@@ -74,43 +73,42 @@ h1 {
 .choice.wrong {
     background-color: salmon;
 }
+
 #lottie-container {
     position: absolute;
-    top: 0; /* Position at the top of the quiz container */
-    right: 0; /* Position at the left of the quiz container */
-    z-index: 1; /* Ensure it's on top of other elements */
+    top: 0;
+    right: 0;
+    z-index: 1;
 }
-
+/* Mobile view */
 @media screen and (max-width: 431px) {
     #lottie-container {
         all: unset;
     }
     #quiz {
-        width: 90%; /* Adjust the width to occupy most of the screen */
-        padding: 20px; /* Decrease padding for smaller screens */
-        margin-bottom: 20px; /* Add margin at the bottom to create space for the Lottie animation */
+        width: 80%;
+        padding: 20px;
+        margin-bottom: 20px;
     }
 
     #lottie-container {
-        margin-bottom: 0px; /* Add margin to create space between quiz and Lottie animation */
+        margin-bottom: 0px;
     }
 
     h1 {
-        font-size: 24px; /* Decrease font size for headings */
+        font-size: 24px;
     }
 
     #question {
-        font-size: 18px; /* Decrease font size for questions */
+        font-size: 18px;
     }
 
     .choice {
-        padding: 8px; /* Adjust padding for choices */
-        font-size: 16px; /* Decrease font size for choices */
+        padding: 8px;
+        font-size: 16px;
     }
 
     #score {
-        font-size: 16px; /* Decrease font size for score */
+        font-size: 16px;
     }
 }
-
-

@@ -1,4 +1,3 @@
-/* style.css */
 body, html {
     background-image: url('../bgimg/background.jpg');
     background-size: cover;
@@ -10,18 +9,16 @@ body, html {
 }
 
 #dataContainer {
-
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }
 
-/* Individual character card */
 .character.pyro {
     border: 1px solid #b60d0d;
     border-radius: 8px;
     padding: 30px;
-    background-color: rgba(236, 73, 35, 0.7); /* Adjust the last value (0.7) for transparency */
+    background-color: rgba(236, 73, 35, 0.7);
     text-align: center;
 }
 
@@ -29,7 +26,7 @@ body, html {
     border: 1px solid #b60d0d;
     border-radius: 8px;
     padding: 30px;
-    background-color: rgba(0, 191, 255, 0.7); /* Adjust the last value (0.7) for transparency */
+    background-color: rgba(0, 191, 255, 0.7);
     text-align: center;
 }
 
@@ -73,7 +70,6 @@ body, html {
     text-align: center;
 }
 
-/* Character name */
 .character h2 {
     font-size: 24px;
     margin-bottom: 15px;
@@ -84,14 +80,12 @@ body, html {
     margin-bottom: 15px;
 }
 
-/* Character image */
 .character img {
-    width: 500px; /* Increased image size */
-    height: 550px; /* Increased image size */
+    width: 500px;
+    height: 550px;
     margin-bottom: 15px;
 }
 
-/* Character name */
 #dataContainer p:nth-child(1) {
     font-size: 28px;
     font-weight: bold;
@@ -99,7 +93,6 @@ body, html {
     margin-bottom: 10px;
 }
 
-/* Character title */
 #dataContainer p:nth-child(2) {
     font-size: 24px;
     font-style: italic;
@@ -107,26 +100,49 @@ body, html {
     margin-bottom: 10px;
 }
 
-/* Character vision */
 #dataContainer p:nth-child(3) {
     font-size: 22px;
-    color: #007BFF; /* Change this to match the color of the vision */
+    color: #007BFF;
     margin-bottom: 10px;
 }
 
-/* Other character details */
 #dataContainer p:nth-child(n+4) {
     font-size: 18px;
     color: #333;
     margin-bottom: 5px;
-    padding: 10px; /* Add padding for better spacing */
-    border: 1px solid rgba(0, 0, 0, 0.2); /* Add a slightly transparent border */
-    border-radius: 5px; /* Add border-radius for rounded corners */
-    background-color: rgba(255, 255, 255, 0.8); /* Add a slightly transparent background */
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
-/* Last paragraph margin */
 #dataContainer p:last-child {
     margin-bottom: 0;
 }
 
+/* Mobile view */
+
+@media screen and (max-width: 431px) {
+    body, html {
+        font-size: 16px;
+    }
+
+    #dataContainer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .character {
+        border-radius: 4px;
+        padding: 15px;
+    }
+
+    .character img {
+        width: 100%;
+        height: auto;
+    }
+
+    #dataContainer p {
+        font-size: 14px;
+    }
+}
