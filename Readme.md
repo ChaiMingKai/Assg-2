@@ -1,5 +1,9 @@
-# Genshin Impact - Website for WIKI and QUIZ
+# Genshin Fandom - Website for WIKI and QUIZ
 This website allows user to get familiar with Genshin Character, and have a fun quiz to test their understanding, which allows them to challenge their freind on the Leaderboard.
+
+## Link to Video & LivePage
+Github: https://chaimingkai.github.io/Assg-2/
+Video on Google Drive: https://drive.google.com/file/d/14NJ2rvrDGqB5yH5KH53sFxXuonQ95XQM/view?usp=sharing
 
 ## Design Process
 
