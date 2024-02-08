@@ -90,6 +90,15 @@ h1 {
   display: block;
 }
 
+a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
 /* Mobile view */
 
 @media screen and (max-width: 431px) {
